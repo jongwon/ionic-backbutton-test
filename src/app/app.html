@@ -1,1 +1,32 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-split-pane>
+
+        <!-- logged out menu -->
+        <ion-menu id="loggedOutMenu" class="slide-menu-bg" [content]="content" (ionClose)="ionMenuClose()" (ionOpen)="ionMenuOepn()">
+    
+            <ion-content class="_slide-menu-bg">
+                
+                <ion-list class="slide-menu-ion-list">
+                    
+                    <button ion-item menuClose (click)="openTabMain()">
+                        메인 페이지
+                    </button>
+                    <button ion-item menuClose (click)="openAnotherPage()" >
+                        다른 페이지 
+                    </button>
+                    <button ion-item menuClose (click)="openErrorReportPage()" >
+                        Error report 
+                    </button>
+                    <button ion-item menuClose (click)="openMainModalPage()" >
+                        메인 페이지 모달 
+                    </button>
+                </ion-list>
+    
+            </ion-content>
+    
+        </ion-menu>
+    
+        <!-- main navigation -->
+        <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>
+    
+    </ion-split-pane>
+    
