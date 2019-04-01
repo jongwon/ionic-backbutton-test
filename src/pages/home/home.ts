@@ -1,26 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
-
-
-@IonicPage({
-    segment: 'home-page'
-})
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
+  templateUrl: 'home.html'
 })
 export class HomePage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-    }
+  constructor(public navCtrl: NavController) {
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad HomePage');
-    }
+  }
 
-
-    goChild(){
-        this.navCtrl.push('ChildPage');
-    }
 }
